@@ -1,0 +1,46 @@
+{
+  "name": "react-userscripts",
+  "version": "1.1.0",
+  "private": true,
+  "dependencies": {
+    "@material/react-button": "^0.15.0",
+    "lodash.camelcase": "^4.3.0",
+    "react": "^18.0.29",
+    "react-app-rewired": "^2.1.8",
+    "react-dom": "^18.0.11",
+    "react-scripts": "^5.0.1",
+    "typescript": "^5.0.2"
+  },
+  "scripts": {
+    "start": "cross-env PORT=8124 BROWSER=none FAST_REFRESH=false WDS_SOCKET_HOST=localhost react-app-rewired start",
+    "finalize": "shx mkdir -p ../dist && shx cp src/userscript-header.js ../dist/react-userscripts.user.js && shx cat build/static/js/main.js >> ../dist/react-userscripts.user.js",
+    "build": "react-app-rewired build && npm run finalize",
+    "debug-build": "react-app-rewired --inspect-brk=5858 build && npm run finalize",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/lodash.camelcase": "^4.3.7",
+    "@types/node": "^18.15.9",
+    "@types/react": "^18.0.29",
+    "@types/react-dom": "^18.0.11",
+    "cross-env": "^7.0.3",
+    "shx": "^0.3.4"
+  }
+}
