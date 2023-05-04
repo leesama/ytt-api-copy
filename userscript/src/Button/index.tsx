@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./style.module.css";
+import "./style.css";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -9,9 +9,9 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({ title, children, onClick }) => {
   return (
-    <div className={style.buttonContainer}>
-      <div className={style.title}>{title}</div>
-      <button className={style.button} onClick={onClick}>
+    <div className="ytt-buttonContainer">
+      <div className="ytt-button-title">{title}</div>
+      <button className="ytt-button" onClick={onClick}>
         {children}
       </button>
     </div>

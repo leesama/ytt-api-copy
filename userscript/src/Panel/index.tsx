@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../Button";
 import camelcase from "lodash.camelcase";
-import style from "./style.module.css";
+import "./style.css";
 import { addLocationChangeCallback, awaitElement } from "../utils";
 type Name = {
   requestName: string;
@@ -56,7 +56,7 @@ function Panel() {
     );
   };
   return (
-    <div className={style.panel}>
+    <div className="ytt-panel">
       {apiName && (
         <>
           <Button title="请求函数" onClick={() => copy(apiName.requestName)}>
@@ -80,7 +80,7 @@ function Panel() {
         </>
       )}
 
-      <div className={style.msg}>{apiName ? msg : "请点击接口详情页"}</div>
+      <div className="ytt-msg">{apiName ? msg : "请点击接口详情页"}</div>
     </div>
   );
 }

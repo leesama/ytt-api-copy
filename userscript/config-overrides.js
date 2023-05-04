@@ -1,5 +1,4 @@
 const util = require("util");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = function override(config, env) {
   // prevent chunking for all files
   Object.assign(config.optimization, {
@@ -53,11 +52,6 @@ module.exports = function override(config, env) {
   // the greasemonkey script
   config.plugins = config.plugins.filter(
     (x) => !x || x.constructor.name !== "MiniCssExtractPlugin"
-  );
-  config.plugins.push(
-    new MiniCssExtractPlugin({
-      filename: " ",
-    })
   );
   (config.module.rules.find((x) => !!x.oneOf).oneOf || []).forEach((x) => {
     if (x.test && x.test.constructor === RegExp && "test.css".match(x.test)) {

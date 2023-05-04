@@ -1,4 +1,4 @@
-.button {
+.ytt-button {
   display: inline-block;
   padding: 8px 16px;
   border: none;
@@ -14,7 +14,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
-.title {
+.ytt-button-title {
   font-size: 18px;
   width: 100px;
   font-weight: 500;
@@ -24,20 +24,20 @@
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
-.button:hover {
+.ytt-button:hover {
   background-color: #1e88e5;
 }
 
-.button:active {
+.ytt-button:active {
   transform: scale(0.95);
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.button:disabled {
+.ytt-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.buttonContainer {
+.ytt-buttonContainer {
   display: flex;
   align-items: center;
 }
