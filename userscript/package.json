@@ -1,9 +1,8 @@
 {
-  "name": "react-userscripts",
-  "version": "1.1.0",
+  "name": "ytt-api-copy",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@material/react-button": "^0.15.0",
     "lodash.camelcase": "^4.3.0",
     "react": "^18.0.29",
     "react-app-rewired": "^2.1.8",

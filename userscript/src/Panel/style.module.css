@@ -6,10 +6,15 @@
   flex-direction: column;
   padding: 20px;
   right: 50px;
-  top: 50px;
+  top: 200px;
   background-color: #fff;
-  width: 200px;
-  height: 200px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border-radius: 4px;
+}
+.msg {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  color: cornflowerblue;
 }

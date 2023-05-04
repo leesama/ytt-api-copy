@@ -1,8 +1,7 @@
 import { createRoot } from "react-dom/client";
 import Panel from "./Panel";
 
-import "@material/react-button/dist/button.min.css";
-import { awaitElement, log, addLocationChangeCallback } from "./utils";
+import { awaitElement, log } from "./utils";
 
 log("React script has successfully started");
 
@@ -16,15 +15,9 @@ async function main() {
   const container = document.createElement("div");
   container.id = "setting-panel";
   body.append(container);
-
   createRoot(container).render(<Panel />);
 }
 
-// Call `main()` every time the page URL changes, including on first load.
-addLocationChangeCallback(() => {
-  // Greasemonkey doesn't bubble errors up to the main console,
-  // so we have to catch them manually and log them
-  main().catch((e) => {
-    log(e);
-  });
+main().catch((e) => {
+  log(e);
 });
