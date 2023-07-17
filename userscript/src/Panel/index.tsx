@@ -16,18 +16,24 @@ function Panel() {
   const setName = async () => {
     setApiName(null);
     await awaitElement("div.panel-view");
-    const method = document.querySelector(
-      "div.panel-view > div:nth-child(3) > div.ant-col-18.colValue > span.colValue.tag-method"
-    )?.innerHTML;
+    let elements = document
+      .querySelector("div.panel-view")!
+      .getElementsByTagName("div");
+    let method;
+    let path;
+    for (let i = 0; i < elements.length; i++) {
+      let element = elements[i];
+      if (element.textContent?.includes("接口路径：")) {
+        let apiDom = element.children[1];
+        method = apiDom.children[0].textContent;
+        path = apiDom.children[1].textContent;
+        break;
+      }
+    }
     if (!method) {
       setApiName(null);
       return;
     }
-    const path = document
-      .querySelector(
-        "div.panel-view > div:nth-child(3) > div.ant-col-18.colValue > span:nth-child(2)"
-      )
-      ?.innerHTML?.replace("/", "");
     // @ts-ignore
     const requestName = camelcase(["api", method, path]);
     // @ts-ignore
