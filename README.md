@@ -4,6 +4,8 @@
 
 中文 | [English](README_EN.md)
 
+![img](public/preview.png)
+
 ## 项目简介
 
 ytt-api-copy 是一个用于在 yapi 接口界面复制 yapi-to-typescript 工具生成的请求函数名、请求对应的 React Hook 名、请求参数类型名和请求参数返回值名的油猴插件。yapi-to-typescript 是一个用于将 yapi 接口数据转换为 TypeScript 类型声明文件的工具。通过该油猴插件，您可以在 yapi 接口界面查看接口的同时，方便地复制请求函数名、请求对应的 React Hook 名、请求参数类型名和请求参数返回值名，从而大大提升前端开发效率。
